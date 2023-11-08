@@ -7,7 +7,6 @@ import (
 )
 
 /*
-*
 go语言中数据类型
 todo go语言中 首字母的大小写来区别是否是私有的
 1、基本数据类型 四个：
@@ -16,12 +15,12 @@ todo go语言中 首字母的大小写来区别是否是私有的
 	2)字符 byte  默认值
 	3)bool  默认值 false
 	4)string 默认值 ""
-	5)数组
-	6)结构体
 
 2、复杂数据类型：
 
 	1)pointer
+	2)数组
+	3)结构体
 	4)管道
 	5)函数
 	6)切片
@@ -33,12 +32,16 @@ func main() {
 	var i = 1
 	fmt.Println(i)
 
+	var wang uint = 20
+	println(wang)
+
 	var a int8 = -128
 	fmt.Println(a)
 	fmt.Printf("%T %d \n", a, unsafe.Sizeof(a))
 
 	//todo 浮点型
 	var price float32 = 12.34
+	println(price)
 	fmt.Println(price)
 
 	//todo 字符类型 一般字符就用byte来存；特殊的就用int
@@ -50,22 +53,7 @@ func main() {
 	var str = "king"
 	fmt.Println(len(str))
 
-	var k = `var a int8 = -128
-	fmt.Println(a)
-	fmt.Printf("%T %d \n" ,a,unsafe.Sizeof(a))
-
-	//浮点型
-	var price float32 = 12.34
-	fmt.Println(price)
-
-	//字符类型 一般字符就用byte来存；特殊的就用int
-	var c byte = 'k'
-	var c2 int = '北'
-	fmt.Printf("c=%c %c \n",c,c2)
-
-	//字符串使用
-	var str string = "king"
-	fmt.Println(len(str))`
+	var k = `var a int8 = -128`
 	fmt.Println(k)
 
 	//todo 字符串拼接
