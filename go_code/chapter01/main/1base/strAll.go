@@ -1,4 +1,4 @@
-package main
+package _base
 
 import (
 	"fmt"
@@ -10,20 +10,26 @@ import (
 *
 字符串的常用函数
 */
-func main() {
+
+func StrAll() {
 
 	var str string = "abc美king"
 	fmt.Println(len(str))
+	println("=================================")
+
 	// 先转成切片
 	a := []rune(str)
 	for i := 0; i < len(a); i++ {
 		fmt.Printf("%c \n", a[i])
 	}
+	println("=================================")
+
 	// 将string 转成数字
 	b, _ := strconv.Atoi("12")
 	i := 1
 	b += i
 	fmt.Println(b)
+	println("=================================")
 
 	sum := strconv.Itoa(i)
 	fmt.Println("-----" + sum)
@@ -34,12 +40,14 @@ func main() {
 	king := "kou"
 
 	println(str + king)
+	println("=================================")
 
 	//  ====================strings包 一系列的字符串转换过程
 	k := "chen"
 	// s := "yu"
 	replace := strings.Replace(k, str, king, 2)
 	println(replace)
+	println("=================================")
 
 	//  ====================strings包 字符串长度
 	println(len(k))
@@ -48,22 +56,26 @@ func main() {
 	for i2 := range k {
 		println(i2)
 	}
+	println("=================================")
 
 	for _, v := range k {
 		//fmt.Println(index)
 		fmt.Printf("%c \n", v)
 	}
+	println("=================================")
 
 	//====================strings包 统计字符串中 这个字符的个数
 
 	kins := "chenkingabcdking"
 	println(strings.Count(kins, "king"))
 
+	println("=================================")
+
 	//====================strings包 不区分大小比较
 	cbc := "nihao"
 
-	bcd := "NIHao1"
-
+	bcd := "NIHao"
 	println(strings.EqualFold(cbc, bcd))
+	println("=================================")
 
 }
