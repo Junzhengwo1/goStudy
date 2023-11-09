@@ -1,4 +1,4 @@
-package _base
+package _String
 
 import (
 	"fmt"
@@ -6,12 +6,7 @@ import (
 	"strings"
 )
 
-/*
-*
-字符串的常用函数
-*/
-
-func StrAll() {
+func MyString() {
 
 	var str string = "abc美king"
 	fmt.Println(len(str))
@@ -45,8 +40,8 @@ func StrAll() {
 	//  ====================strings包 一系列的字符串转换过程
 	k := "chen"
 	// s := "yu"
-	replace := strings.Replace(k, str, king, 2)
-	println(replace)
+	replace := strings.Replace(str, "美", "年后", 2)
+	println("replace", replace)
 	println("=================================")
 
 	//  ====================strings包 字符串长度
@@ -75,7 +70,10 @@ func StrAll() {
 	cbc := "nihao"
 
 	bcd := "NIHao"
+	// 不区分
 	println(strings.EqualFold(cbc, bcd))
 	println("=================================")
+
+	println(strings.Index(bcd, "NI"))
 
 }

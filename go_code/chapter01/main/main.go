@@ -2,8 +2,16 @@ package main
 
 import (
 	_base "goStudy/go_code/chapter01/main/1base"
-	_myFunc "goStudy/go_code/chapter01/main/2myFunc"
+	_String "goStudy/go_code/chapter01/main/3String"
 )
+
+/*
+*
+init() 函数会先执行被引入包的
+*/
+func init() {
+	println("init……")
+}
 
 func main() {
 	//_base.MyPointer()
@@ -17,6 +25,6 @@ func main() {
 	k := "king"
 	_base.ForRange(k)
 	println("=============================")
-	_myFunc.MyFunc()
-
+	//_myFunc.MyFunc()
+	_String.MyString()
 }
