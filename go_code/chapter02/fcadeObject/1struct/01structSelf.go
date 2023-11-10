@@ -11,8 +11,9 @@ type Student struct {
 }
 
 func main() {
-
-	// 结构体名 定义结构体变量
+	// 结构体名 定义结构体变量 赋值 类似java的构造器
 	var s = Student{23, "kou", 22}
+	s.Name = "king" // 修改结构体属性
+	println(s.Age)  // 访问结构体属性
 	fmt.Println(s)
 }
