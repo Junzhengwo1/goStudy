@@ -49,6 +49,7 @@ func TestMethod() {
 	s.Pes.name = "lishi"
 	fmt.Println(s)
 
+	println("------------------------------------")
 	fmt.Println(p)
 
 	println("------------------------------------")
