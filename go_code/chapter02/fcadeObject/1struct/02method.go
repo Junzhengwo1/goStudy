@@ -27,7 +27,8 @@ func main() {
 	s := P{Pes{2, "张三", 23}, "aksdia"}
 
 	fmt.Println(p.name)
-	p.read() // 对象调用方法  函数属于包
+	p.read() // 对象调用方法 对象自己相当于也是传递了自己 函数属于包
 	fmt.Println(s)
+	s.read() // 继承了 Pes 所以可以直接调用 Pes 的方法
 
 }
