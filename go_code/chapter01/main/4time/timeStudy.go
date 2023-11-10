@@ -1,4 +1,4 @@
-package main
+package timeStudy
 
 import (
 	"fmt"
@@ -9,7 +9,8 @@ import (
 *
 日期相关的
 */
-func main() {
+
+func TimeStudy() {
 
 	now := time.Now()
 	fmt.Printf("%v ~~~~  %T \n", now, now)
