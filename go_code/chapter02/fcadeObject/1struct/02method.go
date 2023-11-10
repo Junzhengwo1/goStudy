@@ -10,7 +10,7 @@ type Pes struct {
 
 // 继承 通过匿名字段实现继承
 
-type p struct {
+type P struct {
 	Pes
 	addr string
 }
@@ -23,7 +23,11 @@ func (s Pes) read() {
 
 func main() {
 	p := Pes{22, "que", 23}
+
+	s := P{Pes{2, "张三", 23}, "aksdia"}
+
 	fmt.Println(p.name)
-	p.read()
+	p.read() // 对象调用方法  函数属于包
+	fmt.Println(s)
 
 }
