@@ -1,4 +1,4 @@
-package main
+package _struct
 
 import "fmt"
 
@@ -8,9 +8,9 @@ type Student struct {
 	Age  int
 }
 
-func main() {
+func TestStruct() {
 	var a Student //直接定义
-	println(a)
+	fmt.Println(a)
 	// 结构体名 定义结构体变量 赋值 类似java的构造器
 	var s = Student{23, "kou", 22}
 	var s1 = Student{}
