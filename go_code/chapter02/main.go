@@ -6,5 +6,14 @@ func main() {
 
 	//_struct.Encapsulation()
 
-	_struct.TestMethod()
+	//_struct.TestMethod()
+
+	a := _struct.A{}
+
+	b := _struct.B{}
+
+	_struct.Greet(a)
+
+	_struct.Greet(b)
+
 }
