@@ -16,4 +16,6 @@ func main() {
 
 	_struct.Greet(b)
 
+	a.Ni()
+
 }
