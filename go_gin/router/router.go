@@ -34,5 +34,8 @@ func UserRouter() *gin.Engine {
 	orderGroup.GET("error", controller.OrderController{}.List)
 	orderGroup.POST("post", controller.OrderController{}.Post)
 
+	goGroup := r.Group("go")
+	goGroup.GET("go", controller.GoTestController{}.FindOne)
+
 	return r
 }
