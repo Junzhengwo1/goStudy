@@ -16,3 +16,9 @@ func Query(id int) pojo.GoTest {
 	fmt.Println(test)
 	return test
 }
+
+// todo 其他操作
+
+func AddUser(id int) {
+
+}
