@@ -1,11 +1,12 @@
 package config
 
 import (
+	"fmt"
 	"github.com/go-redis/redis"
 )
 
 var (
-	Client *redis.Client
+	RedisClient *redis.Client
 )
 
 // redis 连接池
@@ -18,5 +19,5 @@ func init() {
 	//	DialTimeout: 240 * time.Second, // 连接超时时间
 	//	PoolSize:    10,                // PoolSize:    10,
 	//})
-	//fmt.Println("Client:",Client)
+	fmt.Println("Client:", RedisClient)
 }
