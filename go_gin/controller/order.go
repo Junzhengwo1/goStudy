@@ -13,7 +13,7 @@ type Stu struct {
 type OrderController struct {
 }
 
-func (*OrderController) GetOrderInfo(context *gin.Context) {
+func (OrderController) GetOrderInfo(context *gin.Context) {
 	Success(context, 0, "success", gin.H{
 		"name": "Order",
 		"age":  23,
@@ -22,13 +22,13 @@ func (*OrderController) GetOrderInfo(context *gin.Context) {
 
 // 模拟函数名重复
 
-func (*OrderController) List(c *gin.Context) {
+func (OrderController) List(c *gin.Context) {
 	Error(c, 1, "orderError")
 }
 
 // 获取post请求参数
 
-func (*OrderController) Post(c *gin.Context) {
+func (OrderController) Post(c *gin.Context) {
 	//value := c.PostForm("name")
 	//form := c.DefaultPostForm("age", "100")
 	// 接受 body格式的

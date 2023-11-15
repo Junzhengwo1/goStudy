@@ -9,7 +9,7 @@ import (
 type GoTestController struct {
 }
 
-func (*GoTestController) FindOne(c *gin.Context) {
+func (GoTestController) FindOne(c *gin.Context) {
 	idStr := c.Query("id")
 	id, _ := strconv.Atoi(idStr)
 	query := dao.Query(id)

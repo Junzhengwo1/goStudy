@@ -1,11 +1,7 @@
 package pojo
 
-import (
-	"gorm.io/gorm"
-)
-
 type User struct {
-	gorm.Model
+	//gorm.Model
 	// 自增
 	Id         int    `json:"id" gorm:"primary_key"`
 	Username   string `json:"username" gorm:"type:varchar(20);not null"`
