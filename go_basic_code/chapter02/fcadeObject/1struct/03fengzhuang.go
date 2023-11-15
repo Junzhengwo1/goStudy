@@ -2,7 +2,7 @@ package _struct
 
 import (
 	"fmt"
-	_myObject "goStudy/go_code/chapter01/basic/8myObject"
+	_myObject "goStudy/go_basic_code/chapter01/basic/8myObject"
 )
 
 // 封装
