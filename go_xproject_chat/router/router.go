@@ -10,8 +10,8 @@ func Router() *gin.Engine {
 	// 路由分组
 	userGroup := r.Group("user")
 	{
-		userController := controller.UserController{}
-		userGroup.GET("query", userController.Query)
+		// 这里方法绑定在 指针上 所以要用取地址符号
+		userGroup.GET("query", (&controller.UserController{}).Query)
 	}
 	return r
 }

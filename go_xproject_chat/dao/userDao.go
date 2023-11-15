@@ -16,6 +16,6 @@ func (*UserDao) Query(id int) pojo.User {
 	if err != nil {
 		fmt.Println(err)
 	}
-	fmt.Println(user)
+	fmt.Printf("user is %v", user)
 	return user
 }
