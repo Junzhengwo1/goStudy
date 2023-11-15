@@ -1,9 +1,9 @@
 package main
 
 import (
-	_base "goStudy/go_code/chapter01/basic/1base"
-	_String "goStudy/go_code/chapter01/basic/3String"
-	_interFunc "goStudy/go_code/chapter01/basic/5interFunc"
+	_base "goStudy/go_basic_code/chapter01/basic/1base"
+	_String "goStudy/go_basic_code/chapter01/basic/3String"
+	_interFunc "goStudy/go_basic_code/chapter01/basic/5interFunc"
 )
 
 /*
