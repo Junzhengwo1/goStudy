@@ -2,16 +2,16 @@ package controller
 
 import (
 	"github.com/gin-gonic/gin"
-	"goStudy/go_gorm/gormdao"
+	"goStudy/go_gorm/dao"
 	"strconv"
 )
 
 type GoTestController struct {
 }
 
-func (g GoTestController) FindOne(c *gin.Context) {
+func (*GoTestController) FindOne(c *gin.Context) {
 	idStr := c.Query("id")
 	id, _ := strconv.Atoi(idStr)
-	query := gormdao.Query(id)
+	query := dao.Query(id)
 	Success(c, 200, "success", query)
 }

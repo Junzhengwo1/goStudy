@@ -1,4 +1,4 @@
-package gormdao
+package dao
 
 import (
 	"fmt"

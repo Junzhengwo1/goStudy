@@ -1,9 +1,9 @@
 package main
 
-import "goStudy/go_gorm/gormdao"
+import "goStudy/go_gorm/dao"
 
 func main() {
 
-	gormdao.Query(1)
+	dao.Query(1)
 
 }
