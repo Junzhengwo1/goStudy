@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	MySQL = "root:12345678@tcp(127.0.0.1:3306)/go_chat?charset=utf8"
+	MySQL = "root:12345678@tcp(127.0.0.1:3306)/go_chat?charset=utf8&parseTime=true&loc=Local"
 )
 
 var (
