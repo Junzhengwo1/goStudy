@@ -22,7 +22,7 @@ var (
 
 func init() {
 
-	root := fmt.Sprintf(MySQL2, "root", "12345678", "127.0.0.1", 3306, "go_for")
+	root := fmt.Sprintf(MySQL2, "root", "12345678", "127.0.0.1", 3306, "for_go")
 
 	Db, err = gorm.Open(mysql.New(mysql.Config{
 		DSN:                       root,               // data source name, refer https://github.com/go-sql-driver/mysql#dsn-data-source-name
