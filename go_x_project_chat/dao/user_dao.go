@@ -1,9 +1,9 @@
 package dao
 
 import (
-	"fmt"
-	"goStudy/go_xproject_chat/model/pojo"
-	"goStudy/go_xproject_chat/util"
+	"goStudy/go_x_project_chat/model/pojo"
+	"goStudy/go_x_project_chat/util"
+	"log"
 )
 
 type UserDao struct {
@@ -14,8 +14,7 @@ func (*UserDao) Query(id int) pojo.User {
 	var user pojo.User
 	err := util.Db.Where("id = ?", id).First(&user).Error
 	if err != nil {
-		fmt.Println(err)
+		log.Fatalln(err)
 	}
-	fmt.Printf("user is %v", user)
 	return user
 }

@@ -2,11 +2,15 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"goStudy/go_xproject_chat/controller"
+	"goStudy/go_x_project_chat/common/self_logger"
+	"goStudy/go_x_project_chat/controller"
 )
 
 func Router() *gin.Engine {
 	r := gin.Default() // 拿到默认引擎 默认路由
+	// 配置 日志收集
+	r.Use(gin.LoggerWithConfig(self_logger.LoggerToFile()))
+	r.Use(self_logger.Recover)
 	// 路由分组
 	userGroup := r.Group("user")
 	{

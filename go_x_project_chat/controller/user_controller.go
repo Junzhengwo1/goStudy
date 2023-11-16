@@ -3,8 +3,8 @@ package controller
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"goStudy/go_xproject_chat/common"
-	"goStudy/go_xproject_chat/dao"
+	"goStudy/go_x_project_chat/common"
+	"goStudy/go_x_project_chat/dao"
 	"strconv"
 )
 

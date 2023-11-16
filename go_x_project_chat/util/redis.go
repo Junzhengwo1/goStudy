@@ -11,7 +11,7 @@ var (
 
 // redis 连接池
 // 连接Redis
-func init() {
+func Init() {
 	//Client = redis.NewClient(&redis.Options{
 	//	Addr:        "localhost:6379",
 	//	Password:    "",                // no password set
