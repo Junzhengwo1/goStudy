@@ -11,14 +11,23 @@ type Result struct {
 	Data interface{} `json:"data"`
 }
 
-func Success(c *gin.Context, code int, msg string, data interface{}) {
+func Success(c *gin.Context, data interface{}) {
+	c.JSON(http.StatusOK, Result{
+		Code: SuccessCode,
+		Msg:  SuccessMsg,
+		Data: data,
+	})
+}
+
+func SuccessWithCode(c *gin.Context, code int, msg string, data interface{}) {
 	c.JSON(http.StatusOK, Result{
 		Code: code,
 		Msg:  msg,
 		Data: data,
 	})
 }
-func Error(c *gin.Context, code int, msg string) {
+
+func Fail(c *gin.Context, code int, msg string) {
 	c.JSON(http.StatusOK, Result{
 		Code: code,
 		Msg:  msg,

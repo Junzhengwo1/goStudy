@@ -1,9 +1,14 @@
 package main
 
-import "goStudy/go_gorm/dao"
+import (
+	"fmt"
+	"goStudy/go_gorm/dao"
+)
 
 func main() {
 
-	dao.Query(1)
+	query := dao.Query(1)
+	fmt.Println(*query)
+	dao.QueryByIds([]int{1, 2})
 
 }

@@ -1,7 +1,6 @@
 server:
   port: :8899
 
-
 mysql:
   driver: mysql
   host: 127.0.0.1
