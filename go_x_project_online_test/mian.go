@@ -1,8 +1,8 @@
 package main
 
 import (
-	"goStudy/go_x_project_chat/router"
-	"goStudy/go_x_project_chat/util"
+	"goStudy/go_x_project_online_test/router"
+	"goStudy/go_x_project_online_test/util"
 )
 
 func main() {

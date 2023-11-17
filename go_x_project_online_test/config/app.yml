@@ -7,7 +7,7 @@ mysql:
   port: 3306
   username: root
   password: 12345678
-  database: go_chat
+  database: onile_test
   charset: utf8mb4
   collation: utf8mb4_unicode_ci
 

@@ -2,8 +2,8 @@ package controller
 
 import (
 	"github.com/gin-gonic/gin"
-	"goStudy/go_x_project_chat/common"
-	"goStudy/go_x_project_chat/service"
+	"goStudy/go_x_project_online_test/common"
+	"goStudy/go_x_project_online_test/service"
 	"strconv"
 )
 

@@ -2,8 +2,8 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"goStudy/go_x_project_chat/common/self_logger"
-	"goStudy/go_x_project_chat/controller"
+	"goStudy/go_x_project_online_test/common/self_logger"
+	"goStudy/go_x_project_online_test/controller"
 )
 
 func Router() *gin.Engine {

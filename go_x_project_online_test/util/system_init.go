@@ -16,7 +16,7 @@ var (
 func initConfig() {
 	// 读yml
 	viper.SetConfigName("app")
-	viper.AddConfigPath("./go_x_project_chat/config")
+	viper.AddConfigPath("./go_x_project_online_test/config")
 	err := viper.ReadInConfig()
 	if err != nil {
 		log.Fatalln("read config is fail", err)
