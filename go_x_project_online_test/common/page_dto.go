@@ -1,4 +1,4 @@
-package dto
+package common
 
 type PageDTO struct {
 	PageNum  int   `json:"pageNum"`
