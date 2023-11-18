@@ -22,7 +22,7 @@ func Router() *gin.Engine {
 	problemGroup := r.Group("problem")
 	{
 		// 这里方法绑定在 指针上 所以要用取地址符号
-		problemGroup.GET("query", (&controller.ProblemController{}).Query)
+		problemGroup.POST("query", (&controller.ProblemController{}).QueryPage)
 	}
 
 	return r
