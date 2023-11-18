@@ -12,10 +12,10 @@ type UserService struct {
 func (*UserService) Query(id int) vo.UserVo {
 	user := (&dao.UserDao{}).Query(id)
 	// user 转 userVo
-	return buildData(user)
+	return (&UserService{}).buildData(user)
 }
 
-func buildData(user *pojo.UserBasic) vo.UserVo {
+func (*UserService) buildData(user *pojo.UserBasic) vo.UserVo {
 	return vo.UserVo{
 		ID:        user.ID,
 		Name:      user.Name,
