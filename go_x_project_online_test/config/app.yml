@@ -1,0 +1,14 @@
+server:
+  port: :8899
+
+mysql:
+  driver: mysql
+  host: 127.0.0.1
+  port: 3306
+  username: root
+  password: 12345678
+  database: onile_test
+  charset: utf8mb4
+  collation: utf8mb4_unicode_ci
+
+

@@ -1,31 +1,36 @@
-package config
+package util
 
 import (
 	"fmt"
 	"gorm.io/driver/mysql"
-	_ "gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"log"
+	"strconv"
 )
 
+// mysql 初始化
+
 const (
-	MySQL  = "root:12345678@tcp(127.0.0.1:3306)/go_for?charset=utf8"
-	MySQL2 = "%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True&loc=Local"
+	MySQL = "%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True&loc=Local"
 )
 
 var (
-	Db                *gorm.DB
+	Db                *gorm.DB // 数据库
 	err               error
 	datetimePrecision = 2
 )
 
-func init() {
-
-	root := fmt.Sprintf(MySQL2, "root", "12345678", "127.0.0.1", 3306, "for_go")
+func initMysql() {
+	dsn := fmt.Sprintf(MySQL,
+		mysqlConf["username"].(string),
+		strconv.Itoa(mysqlConf["password"].(int)),
+		mysqlConf["host"].(string),
+		mysqlConf["port"].(int),
+		mysqlConf["database"].(string))
 
 	Db, err = gorm.Open(mysql.New(mysql.Config{
-		DSN:                       root,               // data source name, refer https://github.com/go-sql-driver/mysql#dsn-data-source-name
+		DSN:                       dsn,                // data source name, refer https://github.com/go-sql-driver/mysql#dsn-data-source-name
 		DefaultStringSize:         256,                // add default size for string fields, by default, will use db type `longtext` for fields without size, not a primary key, no index defined and don't have default values
 		DisableDatetimePrecision:  true,               // disable datetime precision support, which not supported before MySQL 5.6
 		DefaultDatetimePrecision:  &datetimePrecision, // default datetime precision
@@ -42,4 +47,5 @@ func init() {
 	if Db.Error != nil {
 		log.Fatalln("DB connect fail", err)
 	}
+
 }

@@ -11,7 +11,7 @@ import (
 init() 函数会先执行被引入包的
 */
 func init() {
-	println("init……")
+	println("util……")
 }
 
 func main() {

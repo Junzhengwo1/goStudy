@@ -4,11 +4,16 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"goStudy/go_gin/controller"
+	"goStudy/go_gin/util/self_logger"
 	"net/http"
 )
 
 func UserRouter() *gin.Engine {
 	r := gin.Default() // 拿到默认引擎 默认路由
+	// 配置 日志收集
+	r.Use(gin.LoggerWithConfig(self_logger.LoggerToFile()))
+	r.Use(self_logger.Recover)
+
 	// 路由分组
 	userGroup := r.Group("user")
 	{
