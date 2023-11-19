@@ -20,7 +20,7 @@ type RedisConfig struct {
 
 // redis 连接池
 // 连接Redis
-func Init() {
+func InitRedis() {
 	//Client = redis.NewClient(&redis.Options{
 	//	Addr:        "localhost:6379",
 	//	Password:    "",                // no password set

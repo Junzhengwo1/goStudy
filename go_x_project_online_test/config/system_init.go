@@ -5,7 +5,6 @@ package config
 import (
 	"github.com/spf13/viper"
 	_ "gorm.io/driver/mysql"
-	"log"
 )
 
 type Conf struct {
@@ -16,7 +15,8 @@ type Conf struct {
 }
 
 var (
-	Config Conf
+	Config    Conf
+	configErr error
 )
 
 // mapstructure
@@ -25,17 +25,17 @@ func initConfig() {
 	// 读yml
 	viper.SetConfigName("app")
 	viper.AddConfigPath("./go_x_project_online_test/conf")
-	err := viper.ReadInConfig()
-	if err != nil {
-		log.Fatalln("read conf is fail", err)
+	configErr = viper.ReadInConfig()
+	if configErr != nil {
+		panic(configErr)
 	}
-	if err := viper.Unmarshal(&Config); err != nil {
-		log.Fatalln("unmarshal conf is fail", err)
+	configErr = viper.Unmarshal(&Config)
+	if configErr != nil {
+		panic(configErr)
 	}
-
 }
 
-func init() {
+func Init() {
 	initConfig() // yml 配置文件
 	initMysql()
 

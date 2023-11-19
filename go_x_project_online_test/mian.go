@@ -6,7 +6,8 @@ import (
 )
 
 func main() {
-
+	// 显示的初始化函数
+	config.Init()
 	err := router.Router().Run(config.Config.Port)
 	if err != nil {
 		return
