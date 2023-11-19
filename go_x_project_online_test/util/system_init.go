@@ -13,18 +13,19 @@ var (
 	ServerConf map[string]interface{} // yml 配置信息
 )
 
+// mapstructure
 func initConfig() {
 	// 读yml
 	viper.SetConfigName("app")
-	viper.AddConfigPath("./go_x_project_online_test/config")
+	viper.AddConfigPath("./go_x_project_online_test/conf")
 	err := viper.ReadInConfig()
 	if err != nil {
-		log.Fatalln("read config is fail", err)
+		log.Fatalln("read conf is fail", err)
 	}
 	mysqlConf = viper.Get("mysql").(map[string]interface{})   // 类型断言
 	ServerConf = viper.Get("server").(map[string]interface{}) // 类型断言
-	log.Printf("Using mysql file type is:%T \nvalue is:%v", mysqlConf, mysqlConf)
-	log.Printf("Using server file type is:%T \nvalue is:%v", ServerConf, ServerConf)
+	//log.Printf("Using mysql file type is:%T \nvalue is:%v", mysqlConf, mysqlConf)
+	//log.Printf("Using server file type is:%T \nvalue is:%v", ServerConf, ServerConf)
 }
 
 func init() {

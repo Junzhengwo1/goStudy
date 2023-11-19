@@ -11,7 +11,7 @@ import (
 func Query(id int) *pojo.GoTest {
 	// 查询单条数据
 	var test *pojo.GoTest
-	//err := config.Db.Where("id = ?", id).First(&test).Error  等价
+	//err := conf.Db.Where("id = ?", id).First(&test).Error  等价
 	err := config.Db.First(&test, id).Error
 	if err != nil {
 		fmt.Println(err)
