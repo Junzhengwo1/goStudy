@@ -1,5 +1,4 @@
-server:
-  port: :8899
+port: :8899
 
 mysql:
   driver: mysql

@@ -1,4 +1,4 @@
-package util
+package config
 
 import (
 	"fmt"
@@ -6,7 +6,6 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"log"
-	"strconv"
 )
 
 // mysql 初始化
@@ -15,6 +14,15 @@ const (
 	MySQL = "%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=True&loc=Local"
 )
 
+type MysqlConfig struct {
+	Username   string `mapstructure:"username"`
+	Password   string `mapstructure:"password"`
+	Host       string `mapstructure:"host"`
+	Port       int    `mapstructure:"port"`
+	Database   string `mapstructure:"database"`
+	DriverName string `mapstructure:"driver"`
+}
+
 var (
 	Db                *gorm.DB // 数据库
 	err               error
@@ -22,13 +30,7 @@ var (
 )
 
 func initMysql() {
-	dsn := fmt.Sprintf(MySQL,
-		mysqlConf["username"].(string),
-		strconv.Itoa(mysqlConf["password"].(int)),
-		mysqlConf["host"].(string),
-		mysqlConf["port"].(int),
-		mysqlConf["database"].(string))
-
+	dsn := fmt.Sprintf(MySQL, Config.MysqlConfig.Username, Config.MysqlConfig.Password, Config.MysqlConfig.Host, Config.MysqlConfig.Port, Config.MysqlConfig.Database)
 	Db, err = gorm.Open(mysql.New(mysql.Config{
 		DSN:                       dsn,                // data source name, refer https://github.com/go-sql-driver/mysql#dsn-data-source-name
 		DefaultStringSize:         256,                // add default size for string fields, by default, will use db type `longtext` for fields without size, not a primary key, no index defined and don't have default values

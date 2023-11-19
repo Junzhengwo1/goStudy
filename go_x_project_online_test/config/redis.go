@@ -1,4 +1,4 @@
-package util
+package config
 
 import (
 	"fmt"
@@ -8,6 +8,15 @@ import (
 var (
 	RedisClient *redis.Client
 )
+
+type RedisConfig struct {
+	Host        string
+	Port        int
+	Password    string
+	Database    string
+	PoolSize    int
+	DialTimeout int
+}
 
 // redis 连接池
 // 连接Redis
