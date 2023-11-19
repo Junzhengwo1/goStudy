@@ -11,6 +11,11 @@ type Result struct {
 	Data interface{} `json:"data"`
 }
 
+type PageResult struct {
+	PageDTO
+	List interface{} `json:"list"`
+}
+
 func Success(c *gin.Context, data interface{}) {
 	c.JSON(http.StatusOK, Result{
 		Code: SuccessCode,

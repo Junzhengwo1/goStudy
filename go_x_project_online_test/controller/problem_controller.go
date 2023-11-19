@@ -3,19 +3,29 @@ package controller
 import (
 	"github.com/gin-gonic/gin"
 	"goStudy/go_x_project_online_test/common"
+	"goStudy/go_x_project_online_test/model/dto"
 	"goStudy/go_x_project_online_test/service"
-	"strconv"
+	"log"
 )
 
 type ProblemController struct {
 }
 
-func (*ProblemController) Query(c *gin.Context) {
-	// 获取入参
-	idStr := c.Query("id")
-	id, _ := strconv.Atoi(idStr)
-	// service - > dao
-	userService := service.UserService{}
-	query := userService.Query(id)
-	common.Success(c, query)
+func (*ProblemController) QueryPage(c *gin.Context) {
+	// 接受 body格式的
+	var problemDto = dto.ProblemDto{
+		PageDTO: common.PageDTO{PageNum: common.PageNum, PageSize: common.PageSize}, //默认分页
+	}
+	if err := c.ShouldBindJSON(&problemDto); err != nil {
+		log.Fatalln(err)
+	}
+	problemService := service.ProblemService{}
+	query, count := problemService.QueryPage(problemDto)
+	res := common.PageResult{
+		PageDTO: common.PageDTO{PageNum: problemDto.PageNum,
+			PageSize: problemDto.PageSize,
+			Total:    count},
+		List: query,
+	}
+	common.Success(c, res)
 }
