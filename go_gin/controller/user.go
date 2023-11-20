@@ -1,11 +1,11 @@
-package controller
+package Handler
 
 import "github.com/gin-gonic/gin"
 
-type UserController struct {
+type UserHandler struct {
 }
 
-func (UserController) GetUserInfo(c *gin.Context) {
+func (UserHandler) GetUserInfo(c *gin.Context) {
 	Success(c, 0, "success", gin.H{
 		"name": "test router",
 		"age":  23,
@@ -13,6 +13,6 @@ func (UserController) GetUserInfo(c *gin.Context) {
 
 }
 
-func (UserController) List(c *gin.Context) {
+func (UserHandler) List(c *gin.Context) {
 	Error(c, 1, "userError")
 }

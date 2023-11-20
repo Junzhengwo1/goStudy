@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"goStudy/go_x_project_online_test/controller"
+	"goStudy/go_x_project_online_test/handler"
 )
 
 func Router() *gin.Engine {
@@ -14,14 +14,14 @@ func Router() *gin.Engine {
 	userGroup := r.Group("user")
 	{
 		// 这里方法绑定在 指针上 所以要用取地址符号
-		userGroup.GET("query", (&controller.UserController{}).Query)
+		userGroup.GET("query", (&handler.UserHandler{}).Query)
 	}
 
 	// 路由分组
 	problemGroup := r.Group("problem")
 	{
-		// 这里方法绑定在 指针上 所以要用取地址符号
-		problemGroup.POST("query", (&controller.ProblemController{}).QueryPage)
+		problemHandler := handler.ProblemHandler{}
+		problemGroup.POST("query", problemHandler.QueryPage)
 	}
 
 	return r

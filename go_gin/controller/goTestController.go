@@ -1,4 +1,4 @@
-package controller
+package Handler
 
 import (
 	"github.com/gin-gonic/gin"
@@ -7,10 +7,10 @@ import (
 	"strconv"
 )
 
-type GoTestController struct {
+type GoTestHandler struct {
 }
 
-func (GoTestController) FindOne(c *gin.Context) {
+func (GoTestHandler) FindOne(c *gin.Context) {
 	idStr := c.Query("id")
 	self_logger.WriteLog("idStr", "user")
 	id, _ := strconv.Atoi(idStr)

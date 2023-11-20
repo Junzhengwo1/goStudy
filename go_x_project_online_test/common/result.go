@@ -6,9 +6,9 @@ import (
 )
 
 type Result struct {
-	Code int         `json:"code"` //返回到前端时 小写
-	Msg  string      `json:"msg"`
-	Data interface{} `json:"data"`
+	Code int    `json:"code"` //返回到前端时 小写
+	Msg  string `json:"msg"`
+	Data any    `json:"data"`
 }
 
 type PageResult struct {
@@ -16,7 +16,7 @@ type PageResult struct {
 	List interface{} `json:"list"`
 }
 
-func Success(c *gin.Context, data interface{}) {
+func Success(c *gin.Context, data any) {
 	c.JSON(http.StatusOK, Result{
 		Code: SuccessCode,
 		Msg:  SuccessMsg,
@@ -24,7 +24,7 @@ func Success(c *gin.Context, data interface{}) {
 	})
 }
 
-func SuccessWithCode(c *gin.Context, code int, msg string, data interface{}) {
+func SuccessWithCode(c *gin.Context, code int, msg string, data any) {
 	c.JSON(http.StatusOK, Result{
 		Code: code,
 		Msg:  msg,

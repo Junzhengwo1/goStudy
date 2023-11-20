@@ -1,4 +1,4 @@
-package controller
+package handler
 
 import (
 	"github.com/gin-gonic/gin"
@@ -7,10 +7,10 @@ import (
 	"strconv"
 )
 
-type UserController struct {
+type UserHandler struct {
 }
 
-func (*UserController) Query(c *gin.Context) {
+func (*UserHandler) Query(c *gin.Context) {
 	idStr := c.Query("id")
 	id, _ := strconv.Atoi(idStr)
 	// service - > dao

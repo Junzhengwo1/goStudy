@@ -1,4 +1,4 @@
-package controller
+package handler
 
 import (
 	"github.com/gin-gonic/gin"
@@ -8,14 +8,16 @@ import (
 	"log"
 )
 
-type ProblemController struct {
+type ProblemHandler struct {
 }
 
-func (*ProblemController) QueryPage(c *gin.Context) {
+func (*ProblemHandler) QueryPage(c *gin.Context) {
 	// 接受 body格式的
+	page := common.CalcPage()
 	var problemDto = dto.ProblemDto{
-		PageDTO: common.PageDTO{PageNum: common.PageNum, PageSize: common.PageSize}, //默认分页
+		PageDTO: page, //默认分页
 	}
+
 	if err := c.ShouldBindJSON(&problemDto); err != nil {
 		log.Fatalln(err)
 	}
