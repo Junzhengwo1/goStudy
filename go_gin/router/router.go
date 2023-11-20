@@ -3,7 +3,7 @@ package router
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"goStudy/go_gin/Handler"
+	handler "goStudy/go_gin/controller"
 	"goStudy/go_gin/util/self_logger"
 	"net/http"
 )
@@ -31,16 +31,16 @@ func UserRouter() *gin.Engine {
 			c.JSON(http.StatusOK, name)
 		})
 	}
-	userGroup.GET("test/router", Handler.UserHandler{}.GetUserInfo)
-	userGroup.GET("error", Handler.UserHandler{}.List)
+	userGroup.GET("test/router", handler.UserHandler{}.GetUserInfo)
+	userGroup.GET("error", handler.UserHandler{}.List)
 
 	orderGroup := r.Group("order")
-	orderGroup.GET("order", Handler.OrderHandler{}.GetOrderInfo)
-	orderGroup.GET("error", Handler.OrderHandler{}.List)
-	orderGroup.POST("post", Handler.OrderHandler{}.Post)
+	orderGroup.GET("order", handler.OrderHandler{}.GetOrderInfo)
+	orderGroup.GET("error", handler.OrderHandler{}.List)
+	orderGroup.POST("post", handler.OrderHandler{}.Post)
 
 	goGroup := r.Group("go")
-	goGroup.GET("go", Handler.GoTestHandler{}.FindOne)
+	goGroup.GET("go", handler.GoTestHandler{}.FindOne)
 
 	return r
 }
