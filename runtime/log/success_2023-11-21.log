@@ -1,0 +1,5 @@
+127.0.0.1 - [2023-11-21 09:02:32] "GET /go/go?id=1 HTTP/1.1 200 15.163125ms "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool" "
+127.0.0.1 - [2023-11-21 09:05:12] "GET /go/go?id=1 HTTP/1.1 200 1.179917ms "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool" "
+127.0.0.1 - [2023-11-21 09:08:01] "GET /go/go?id=1 HTTP/1.1 200 1.971916ms "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool" "
+127.0.0.1 - [2023-11-21 09:08:36] "GET /go/go?id=1 HTTP/1.1 200 1.5355ms "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool" "
+127.0.0.1 - [2023-11-21 09:10:20] "GET /go/go?id=1 HTTP/1.1 200 1.513458ms "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36 Hutool" "

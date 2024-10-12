@@ -1,10 +1,6 @@
 package main
 
-import (
-	_base "goStudy/go_basic_code/chapter01/basic/1base"
-	_String "goStudy/go_basic_code/chapter01/basic/3String"
-	_interFunc "goStudy/go_basic_code/chapter01/basic/5interFunc"
-)
+import _myFunc "goStudy/go_basic_code/chapter01/basic/2myFunc"
 
 /*
 *
@@ -23,11 +19,14 @@ func main() {
 	//println("=============================")
 	//_base.MyFor()
 	//println("=============================")
-	k := "king"
-	_base.ForRange(k)
-	println("=============================")
-	//_myFunc.MyFunc()
-	_String.MyString()
-	println("=============================")
-	_interFunc.InterFunc()
+	//k := "king"
+	//_base.ForRange(k)
+	//println("=============================")
+	////_myFunc.MyFunc()
+	//_String.MyString()
+	//println("=============================")
+	//_interFunc.InterFunc()
+
+	_myFunc.MyFunc()
+
 }

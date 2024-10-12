@@ -43,8 +43,9 @@ func MyFunc() {
 
 	a := sum // 函数本身可以赋值给变量
 	a(1, 2)  // 等价与 sum(1, 2)
-	fmt.Printf(" type is : %T", a)
+	fmt.Printf(" type is : %T\n", a)
 
+	println("==================")
 	// 匿名函数 定义的时候直接就调用
 	res := func(n1 int, n2 int) int { return n1 + n2 }(1, 2)
 	println(res)
@@ -53,7 +54,11 @@ func MyFunc() {
 	f2 := getSum()
 	println(f2(2))
 	println(f2(3))
-	println(getSum())
+	println("闭包==================")
+	println(getSum()(2))
+	println("==================")
+	s, mit := sum2(2, 3)
+	println(s, mit)
 
 }
 
